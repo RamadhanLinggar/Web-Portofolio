@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ramadhan Linggar Karan | Web Developer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body class="bg-slate-950 text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+
+        <!-- Navbar utama -->
+        <div class="flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#home" class="text-xl font-bold">
+                WEB PORTOFOLIO<span class="text-cyan-400"></span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden items-center gap-8 md:flex">
+                <a href="#home" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    Home
+                </a>
+
+                <a href="#about" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    About
+                </a>
+
+                <a href="#skills" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    Skills
+                </a>
+
+                <a href="#projects" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    Projects
+                </a>
+
+                <a href="#experience" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    Experience
+                </a>
+
+                <a href="#contact" class="text-sm text-slate-300 transition hover:text-cyan-400">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Tombol Hamburger -->
+            <button
+                id="menu-button"
+                type="button"
+                class="rounded-lg p-2 text-slate-300 transition hover:bg-slate-800 hover:text-cyan-400 md:hidden"
+                aria-label="Buka menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+        <!-- Menu Mobile -->
+        <div
+            id="mobile-menu"
+            class="hidden border-t border-slate-800 pt-4 md:hidden"
+        >
+            <div class="flex flex-col gap-4 pb-2">
+
+                <a href="#home"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    Home
+                </a>
+
+                <a href="#about"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    About
+                </a>
+
+                <a href="#skills"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    Skills
+                </a>
+
+                <a href="#projects"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    Projects
+                </a>
+
+                <a href="#experience"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    Experience
+                </a>
+
+                <a href="#contact"
+                    class="mobile-link text-sm text-slate-300 transition hover:text-cyan-400">
+                    Contact
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+    <!-- Hero -->
+    <section id="home" class="flex min-h-screen items-center px-6 pt-20">
+      <div
+        class="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2"
+      >
+        <!-- Hero Text -->
+        <div>
+          <p
+            class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+          >
+            Hello, I'm
+          </p>
+
+          <h1 class="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+            Ramadhan Linggar Karan
+          </h1>
+
+          <h2 class="mt-4 text-2xl font-semibold text-slate-300 sm:text-3xl">
+            Fresh Graduate S1 Teknik Informatika
+          </h2>
+
+          <p
+            class="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg"
+          >
+            Saya memiliki ketertarikan pada pengembangan website dan aplikasi.
+            Saya senang mempelajari teknologi baru serta membangun solusi
+            digital yang sederhana dan bermanfaat.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              class="rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+            >
+              Lihat Project
+            </a>
+
+            <a
+              href="#contact"
+              class="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+<div class="flex justify-center md:justify-end">
+  <div class="group w-full max-w-md overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
+    <img
+      src="assets/img/Foto_Ramadhan_Linggar_Karan.png"
+      alt="Foto Ramadhan Linggar Karan"
+      class="h-[28rem] w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+  </div>
+</div>
+
+        </div>
+
+    </div>
+</div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <section id="about" class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <!-- Section Title -->
+          <div class="mb-12">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              About Me
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Tentang Saya</h2>
+          </div>
+
+          <div class="grid gap-10 md:grid-cols-2 md:items-center">
+            <!-- Description -->
+            <div>
+              <p class="leading-8 text-slate-400">
+                Saya merupakan fresh graduate S1 Teknik Informatika dengan gelar
+                Sarjana Komputer (S.Kom.). Saya memiliki ketertarikan pada
+                bidang pengembangan website dan aplikasi serta senang
+                mempelajari teknologi baru.
+              </p>
+
+              <p class="mt-5 leading-8 text-slate-400">
+                Selama masa perkuliahan, saya mengembangkan beberapa project
+                menggunakan berbagai teknologi, mulai dari pengembangan website
+                hingga aplikasi Android. Saya juga terbiasa mempelajari dan
+                mengembangkan project secara mandiri.
+              </p>
+            </div>
+
+            <!-- Info Card -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <div class="space-y-5">
+                <div>
+                  <p class="text-sm text-slate-500">Pendidikan</p>
+                  <p class="mt-1 font-medium text-slate-200">
+                    S1 Teknik Informatika
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Gelar</p>
+                  <p class="mt-1 font-medium text-slate-200">
+                    Sarjana Komputer (S.Kom.)
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Fokus</p>
+                  <p class="mt-1 font-medium text-slate-200">Web Development</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <section id="skills" class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <!-- Section Title -->
+          <div class="mb-12">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              My Skills
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Keahlian</h2>
+
+            <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+              Beberapa teknologi dan tools yang saya gunakan dalam pengembangan
+              website dan aplikasi.
+            </p>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Frontend -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Frontend Development</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  HTML
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  CSS
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  JavaScript
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Bootstrap
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Tailwind CSS
+                </span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Backend Development</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  PHP
+                </span>
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Database</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  MySQL
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  phpMyAdmin
+                </span>
+              </div>
+            </div>
+
+            <!-- Mobile -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Mobile Development</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Android Studio
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Kotlin
+                </span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Tools</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  VS Code
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Git
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  GitHub
+                </span>
+
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  XAMPP
+                </span>
+              </div>
+            </div>
+
+            <!-- Other -->
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <h3 class="text-xl font-semibold">Other</h3>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span
+                  class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-slate-300"
+                >
+                  Responsive Design
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <section id="projects" class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <!-- Section Title -->
+          <div class="mb-12">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              My Projects
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Project Saya</h2>
+
+            <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+              Beberapa project yang pernah saya kerjakan selama perkuliahan
+              maupun secara personal.
+            </p>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Project 1 -->
+            <a
+              href="projects/football_education.html"
+              class="group block overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition duration-300 hover:-translate-y-2 hover:border-cyan-400"
+            >
+              <!-- Image -->
+              <div class="flex h-64 items-center justify-center overflow-hidden bg-slate-800">
+                <img
+                  src="assets/img/Football_Education.png"
+                  alt="Football Education"
+                  class="h-full w-full object-contain transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <p class="text-sm font-medium text-cyan-400">
+                  Tugas Akhir
+                </p>
+
+                <h3 class="mt-2 text-xl font-bold text-white">
+                  Football Education
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Website edukasi sepak bola yang menyediakan materi teknik dasar
+                  serta fitur rekomendasi latihan menggunakan algoritma
+                  Content-Based Filtering.
+                </p>
+
+                <!-- Tech -->
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span
+                    class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300"
+                  >
+                    PHP
+                  </span>
+
+                  <span
+                    class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300"
+                  >
+                    MySQL
+                  </span>
+
+                  <span
+                    class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300"
+                  >
+                    Tailwind CSS
+                  </span>
+                </div>
+
+                <!-- Click Indicator -->
+                <div
+                  class="mt-6 text-sm font-semibold text-cyan-400 transition group-hover:text-cyan-300"
+                >
+                  Lihat Detail Project →
+                </div>
+              </div>
+            </a>
+
+           <!-- Project 2 -->
+            <a
+              href="projects/e-absensi_mobile.html"
+              class="group block overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition duration-300 hover:-translate-y-2 hover:border-cyan-400"
+            >
+              <!-- Image -->
+              <div class="flex h-64 items-center justify-center overflow-hidden bg-slate-800">
+                <div
+                  class="relative h-56 w-28 rounded-[1.5rem] border-4 border-slate-950 bg-slate-950 p-1 shadow-xl"
+                >
+                  <!-- Speaker -->
+                  <div
+                    class="absolute left-1/2 top-1 z-10 h-2 w-10 -translate-x-1/2 rounded-full bg-slate-950"
+                  ></div>
+
+                  <!-- Screen -->
+                  <div class="h-full w-full overflow-hidden rounded-[1.1rem] bg-white">
+                    <img
+                      src="assets/img/E-AbsensiMobile.png"
+                      alt="E-Absensi Mobile"
+                      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <p class="text-sm font-medium text-cyan-400">
+                  MBKM
+                </p>
+
+                <h3 class="mt-2 text-xl font-bold text-white">
+                  E-Absensi Mobile
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Aplikasi absensi karyawan berbasis Android yang dikembangkan
+                  untuk membantu proses pencatatan kehadiran secara digital
+                  melalui perangkat mobile.
+                </p>
+
+                <!-- Tech -->
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                    Kotlin
+                  </span>
+
+                  <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                    Android Studio
+                  </span>
+
+                  <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                    Room Database
+                  </span>
+                </div>
+
+                <!-- Click Indicator -->
+                <div
+                  class="mt-6 text-sm font-semibold text-cyan-400 transition group-hover:text-cyan-300"
+                >
+                  Lihat Detail Project →
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 3 -->
+                  <a
+                    href="projects/resto_mari_mampir.html"
+                    class="group block overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition duration-300 hover:-translate-y-2 hover:border-cyan-400"
+                  >
+                    <!-- Image -->
+                    <div class="h-64 overflow-hidden bg-slate-800">
+                    <img
+                      src="assets/img/Resto_Mari_Mampir.png"
+                      alt="Resto Mari Mampir"
+                      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6">
+                      <p class="text-sm font-medium text-cyan-400">
+                        Personal Project
+                      </p>
+
+                      <h3 class="mt-2 text-xl font-bold text-white">
+                        Resto Mari Mampir
+                      </h3>
+
+                      <p class="mt-3 text-sm leading-6 text-slate-400">
+                        Website restoran yang dibuat sebagai personal project
+                        untuk menerapkan dan mengembangkan kemampuan dalam
+                        pembuatan website menggunakan HTML, CSS, JavaScript, dan PHP.
+                      </p>
+
+                      <!-- Tech -->
+                      <div class="mt-5 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                          HTML
+                        </span>
+
+                        <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                          CSS
+                        </span>
+
+                        <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                          JavaScript
+                        </span>
+
+                        <span class="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                          PHP
+                        </span>
+                      </div>
+
+                      <!-- Click Indicator -->
+                      <div
+                        class="mt-6 text-sm font-semibold text-cyan-400 transition group-hover:text-cyan-300"
+                      >
+                        Lihat Detail Project →
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <section id="experience" class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-12">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              My Experience
+            </p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Pengalaman</h2>
+            <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+              Pengalaman yang saya peroleh selama menjalani kegiatan magang dan
+              pengembangan project.
+            </p>
+          </div>
+
+          <div class="max-w-3xl">
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:border-cyan-400"
+            >
+              <div
+                class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+              >
+                <div>
+                  <p class="text-sm font-medium text-cyan-400">MBKM / Magang</p>
+
+                  <h3 class="mt-2 text-xl font-bold">
+                    Mobile Application Development Intern
+                  </h3>
+
+                  <p class="mt-1 text-slate-400">
+                    PT. Pelabuhan Tiga Bersaudara
+                  </p>
+                </div>
+
+                <p class="text-sm text-slate-500">2025 – 2026</p>
+              </div>
+
+              <ul class="mt-6 space-y-3 text-sm leading-6 text-slate-400">
+                <li class="flex gap-3">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
+                  ></span>
+                  <span>
+                    Mengembangkan aplikasi E-Absensi Mobile berbasis Android.
+                  </span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
+                  ></span>
+                  <span>
+                    Menggunakan Kotlin dan Android Studio dalam proses
+                    pengembangan aplikasi.
+                  </span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
+                  ></span>
+                  <span>
+                    Menggunakan Room Database untuk penyimpanan data aplikasi.
+                  </span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span
+                    class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"
+                  ></span>
+                  <span>
+                    Berkontribusi dalam proses pengembangan dan pengujian
+                    aplikasi.
+                  </span>
+                </li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span
+                  class="rounded-md bg-slate-800 px-2.5 py-1 text-xs text-slate-300"
+                >
+                  Kotlin
+                </span>
+
+                <span
+                  class="rounded-md bg-slate-800 px-2.5 py-1 text-xs text-slate-300"
+                >
+                  Android Studio
+                </span>
+
+                <span
+                  class="rounded-md bg-slate-800 px-2.5 py-1 text-xs text-slate-300"
+                >
+                  Room Database
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <section id="contact" class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <!-- Section Title -->
+          <div class="mb-12">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              Contact
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Hubungi Saya</h2>
+
+            <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+              Tertarik untuk bekerja sama atau ingin mengetahui lebih lanjut
+              tentang saya? Silakan hubungi saya melalui kontak berikut.
+            </p>
+          </div>
+
+          <!-- Contact Cards -->
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- Email -->
+            <a
+              href="mailto:ramadhan.linggar.karan@gmail.com"
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <p class="text-sm text-slate-500">Email</p>
+
+             <p class="mt-2 break-all font-medium text-slate-200">
+               ramadhan.linggar.karan@gmail.com
+             </p>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/ramadhan-linggar-karan"
+              target="_blank"
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <p class="text-sm text-slate-500">LinkedIn</p>
+
+              <p class="mt-2 font-medium text-slate-200">
+                Ramadhan Linggar Karan
+              </p>
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/RamadhanLinggar"
+              target="_blank"
+              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-cyan-400"
+            >
+              <p class="text-sm text-slate-500">GitHub</p>
+
+              <p class="mt-2 font-medium text-slate-200">RamadhanLinggar</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <footer class="border-t border-slate-800 px-6 py-8">
+        <div
+          class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row"
+        >
+          <p class="text-sm text-slate-500">
+            © 2026 Ramadhan Linggar Karan. All rights reserved.
+          </p>
+
+          <div class="flex gap-5">
+            <a
+              href="https://github.com/RamadhanLinggar"
+              target="_blank"
+              class="text-sm text-slate-500 transition hover:text-cyan-400"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ramadhan-linggar-karan"
+              target="_blank"
+              class="text-sm text-slate-500 transition hover:text-cyan-400"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </footer>
+    </footer>
+  </body>
+</html>

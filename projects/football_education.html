@@ -1,0 +1,833 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Football Education | Ramadhan Linggar Karan</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-950 text-white">
+    <!-- Navbar -->
+    <nav
+      class="fixed left-0 right-0 top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur"
+    >
+      <div class="mx-auto max-w-6xl px-6 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <a href="../index.html" class="text-xl font-bold">
+            R<span class="text-cyan-400">.</span>
+          </a>
+
+          <!-- Back -->
+          <a
+            href="../index.html#projects"
+            class="text-sm text-slate-300 transition hover:text-cyan-400"
+          >
+            ← Kembali ke Projects
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="px-6 pb-16 pt-32">
+      <div class="mx-auto max-w-6xl">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+          <!-- Text -->
+          <div>
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              Tugas Akhir
+            </p>
+
+            <h1 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+              Football Education
+            </h1>
+
+            <p
+              class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
+            >
+              Website edukasi sepak bola yang menyediakan materi mengenai teknik
+              dasar sepak bola serta fitur rekomendasi latihan menggunakan
+              algoritma Content-Based Filtering.
+            </p>
+
+            <!-- Technologies -->
+            <div class="mt-8 flex flex-wrap gap-2">
+              <span
+                class="rounded-md bg-slate-800 px-3 py-2 text-sm text-slate-300"
+              >
+                PHP
+              </span>
+
+              <span
+                class="rounded-md bg-slate-800 px-3 py-2 text-sm text-slate-300"
+              >
+                MySQL
+              </span>
+
+              <span
+                class="rounded-md bg-slate-800 px-3 py-2 text-sm text-slate-300"
+              >
+                Tailwind CSS
+              </span>
+
+              <span
+                class="rounded-md bg-slate-800 px-3 py-2 text-sm text-slate-300"
+              >
+                JavaScript
+              </span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="https://github.com/RamadhanLinggar/football_education"
+                target="_blank"
+                class="rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+              >
+                GitHub →
+              </a>
+
+              <a
+                href="../index.html#projects"
+                class="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-400"
+              >
+                Kembali
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Gallery (klik gambar untuk lihat lebih besar & geser) -->
+          <div
+            class="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl"
+          >
+            <div class="relative aspect-video w-full overflow-hidden bg-black">
+              <div
+                id="carouselTrack"
+                class="flex h-full transition-transform duration-500 ease-out"
+              ></div>
+
+              <!-- Prev / Next -->
+              <button
+                id="prevBtn"
+                aria-label="Sebelumnya"
+                class="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white transition hover:bg-cyan-400 hover:text-slate-950"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M15 19l-7-7 7-7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <button
+                id="nextBtn"
+                aria-label="Berikutnya"
+                class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white transition hover:bg-cyan-400 hover:text-slate-950"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dots -->
+              <div
+                id="dotsContainer"
+                class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4"
+    >
+      <button
+        id="lightboxClose"
+        aria-label="Tutup"
+        class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-white transition hover:text-cyan-400"
+      >
+        &times;
+      </button>
+
+      <button
+        id="lightboxPrev"
+        aria-label="Sebelumnya"
+        class="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-slate-800/70 text-white transition hover:bg-cyan-400 hover:text-slate-950 sm:left-6"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M15 19l-7-7 7-7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <button
+        id="lightboxNext"
+        aria-label="Berikutnya"
+        class="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-slate-800/70 text-white transition hover:bg-cyan-400 hover:text-slate-950 sm:right-6"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M9 5l7 7-7 7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div
+        id="lightboxContent"
+        class="flex max-h-[85vh] w-full max-w-5xl items-center justify-center"
+      ></div>
+
+      <div
+        id="lightboxDots"
+        class="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2"
+      ></div>
+    </div>
+
+    <!-- Project Description -->
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="grid gap-12 md:grid-cols-3">
+          <!-- Main Description -->
+          <div class="md:col-span-2">
+            <p
+              class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+            >
+              About Project
+            </p>
+
+            <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Tentang Project</h2>
+
+            <div class="mt-6 space-y-5 leading-8 text-slate-400">
+              <p>
+                Football Education merupakan website edukasi sepak bola yang
+                dikembangkan sebagai Tugas Akhir pada program studi Teknik
+                Informatika. Website ini dibuat untuk menyediakan informasi
+                mengenai teknik dasar sepak bola dalam bentuk materi yang lebih
+                terstruktur.
+              </p>
+
+              <p>
+                Website menyediakan materi mengenai beberapa teknik dasar sepak
+                bola seperti dribbling, passing, shooting, dan heading. Selain
+                materi, sistem juga menyediakan rekomendasi latihan yang
+                disesuaikan berdasarkan kategori, tag, dan atribut latihan.
+              </p>
+
+              <p>
+                Fitur rekomendasi menggunakan pendekatan Content-Based
+                Filtering. Setiap latihan memiliki kategori, tag, dan atribut
+                yang digunakan untuk menghitung kesesuaian antara kebutuhan
+                pengguna dengan latihan yang tersedia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Information -->
+          <div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+              <h3 class="text-xl font-semibold">Informasi Project</h3>
+
+              <div class="mt-6 space-y-5">
+                <div>
+                  <p class="text-sm text-slate-500">Project Type</p>
+
+                  <p class="mt-1 font-medium text-slate-200">Tugas Akhir</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Platform</p>
+
+                  <p class="mt-1 font-medium text-slate-200">Website</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Backend</p>
+
+                  <p class="mt-1 font-medium text-slate-200">PHP</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Database</p>
+
+                  <p class="mt-1 font-medium text-slate-200">MySQL</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-slate-500">Recommendation</p>
+
+                  <p class="mt-1 font-medium text-slate-200">
+                    Content-Based Filtering
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="border-y border-slate-800 bg-slate-900/30 px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12">
+          <p
+            class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+          >
+            Features
+          </p>
+
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Fitur Utama</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Feature 1 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Materi Teknik Dasar</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Menyediakan materi edukasi mengenai teknik dasar sepak bola
+              seperti dribbling, passing, shooting, dan heading.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Rekomendasi Latihan</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Sistem memberikan rekomendasi latihan berdasarkan kesesuaian
+              kategori, tag, dan atribut latihan.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Content-Based Filtering</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Algoritma digunakan untuk menghitung skor kesesuaian antara
+              karakteristik kebutuhan dengan data latihan yang tersedia.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Manajemen Konten</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Admin dapat mengelola kategori, tag, atribut, materi, dan data
+              latihan yang digunakan dalam sistem.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Video Pembelajaran</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Materi dan latihan dapat dilengkapi dengan video pembelajaran
+              untuk membantu pengguna memahami teknik yang dipelajari.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h3 class="text-xl font-semibold">Responsive Design</h3>
+
+            <p class="mt-4 text-sm leading-7 text-slate-400">
+              Tampilan website dirancang agar dapat digunakan pada berbagai
+              ukuran layar, baik desktop maupun perangkat mobile.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendation System -->
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12">
+          <p
+            class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+          >
+            Recommendation System
+          </p>
+
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+            Sistem Rekomendasi
+          </h2>
+
+          <p class="mt-4 max-w-3xl leading-7 text-slate-400">
+            Sistem rekomendasi menggunakan pendekatan Content-Based Filtering
+            dengan mencocokkan karakteristik latihan berdasarkan kategori, tag,
+            dan atribut.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Category -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <div class="text-2xl font-bold text-cyan-400">1</div>
+
+            <h3 class="mt-4 text-xl font-semibold">Kategori Sama</h3>
+
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Latihan harus berada pada kategori yang sama agar dapat menjadi
+              kandidat rekomendasi.
+            </p>
+          </div>
+
+          <!-- Tags -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <div class="text-2xl font-bold text-cyan-400">+1</div>
+
+            <h3 class="mt-4 text-xl font-semibold">Tag yang Sama</h3>
+
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Setiap tag yang sama antara kebutuhan dan latihan akan menambah
+              satu poin pada skor.
+            </p>
+          </div>
+
+          <!-- Attributes -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <div class="text-2xl font-bold text-cyan-400">+1</div>
+
+            <h3 class="mt-4 text-xl font-semibold">Atribut yang Sama</h3>
+
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Setiap atribut yang sama akan menambah satu poin pada skor
+              kesesuaian latihan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Formula -->
+        <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+          <p class="text-sm text-slate-500">Perhitungan skor</p>
+
+          <p class="mt-3 text-lg font-semibold text-slate-200">
+            Skor = Kategori + Jumlah Tag Sama + Jumlah Atribut Sama
+          </p>
+
+          <p class="mt-3 text-sm leading-7 text-slate-400">
+            Contoh: jika kategori sama, terdapat 2 tag yang sama, dan terdapat 1
+            atribut yang sama, maka skor latihan adalah 1 + 2 + 1 = 4.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="border-y border-slate-800 bg-slate-900/30 px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12">
+          <p
+            class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+          >
+            Technologies
+          </p>
+
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+            Teknologi yang Digunakan
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            HTML
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            CSS
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            JavaScript
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            PHP
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            MySQL
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            Tailwind CSS
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            XAMPP
+          </span>
+
+          <span
+            class="rounded-lg bg-slate-800 px-4 py-3 text-sm text-slate-300"
+          >
+            phpMyAdmin
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div
+          class="rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center sm:p-12"
+        >
+          <p
+            class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400"
+          >
+            Project Repository
+          </p>
+
+          <h2 class="mt-3 text-3xl font-bold">Lihat Source Code</h2>
+
+          <p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-400">
+            Source code project Football Education tersedia di GitHub.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              href="https://github.com/RamadhanLinggar/football_education"
+              target="_blank"
+              class="rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+            >
+              GitHub →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 px-6 py-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row"
+      >
+        <p class="text-sm text-slate-500">
+          © 2026 Ramadhan Linggar Karan. All rights reserved.
+        </p>
+
+        <div class="flex gap-5">
+          <a
+            href="https://github.com/RamadhanLinggar"
+            target="_blank"
+            class="text-sm text-slate-500 transition hover:text-cyan-400"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ramadhan-linggar-karan"
+            target="_blank"
+            class="text-sm text-slate-500 transition hover:text-cyan-400"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ====== DATA GALERI ======
+      // Tinggal tambah/ganti item di sini kalau mau nambah gambar.
+      // Item terakhir sengaja dibuat type: 'video' untuk demo.
+      const mediaItems = [
+        {
+          type: "image",
+          src: "../assets/img/Football_Education.png",
+          alt: "Tampilan Beranda Football Education",
+        },
+        {
+          type: "image",
+          src: "../assets/img/Football_Education2.png",
+          alt: "Tampilan Materi Football Education",
+        },
+        {
+          type: "image",
+          src: "../assets/img/Football_Education3.png",
+          alt: "Tampilan Rekomendasi Latihan",
+        },
+        {
+          type: "video",
+          src: "https://www.youtube.com/embed/i4bMkUaIoZM",
+          alt: "Video Demo Football Education",
+        },
+      ];
+
+      let current = 0;
+      let lightboxIndex = 0;
+
+      const track = document.getElementById("carouselTrack");
+      const dotsContainer = document.getElementById("dotsContainer");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxContent = document.getElementById("lightboxContent");
+      const lightboxDots = document.getElementById("lightboxDots");
+
+      const playIconSVG = `
+        <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 sm:h-16 sm:w-16">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-6 w-6 text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      `;
+
+      function renderTrack() {
+        track.innerHTML = mediaItems
+          .map((item, i) => {
+            const mediaHTML =
+              item.type === "image"
+                ? `<img src="${item.src}" alt="${item.alt}" class="h-full w-full object-contain bg-slate-900" />`
+                : `<div class="relative h-full w-full bg-black">
+               <iframe
+                 src="${item.src}"
+                 title="${item.alt}"
+                 class="h-full w-full"
+                 frameborder="0"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowfullscreen>
+               </iframe>
+               ${playIconSVG}
+             </div>`;
+
+            return `
+        <div class="h-full w-full flex-shrink-0 cursor-pointer" data-index="${i}">
+          ${mediaHTML}
+        </div>
+      `;
+          })
+          .join("");
+
+        track.querySelectorAll("[data-index]").forEach((el) => {
+          el.addEventListener("click", () =>
+            openLightbox(Number(el.dataset.index)),
+          );
+        });
+
+        updateTrackPosition();
+      }
+
+      function renderDots() {
+        dotsContainer.innerHTML = mediaItems
+          .map(
+            (_, i) => `
+              <button
+                data-goto="${i}"
+                aria-label="Ke slide ${i + 1}"
+                class="h-2 rounded-full transition ${
+                  i === current ? "w-5 bg-cyan-400" : "w-2 bg-slate-600"
+                }"
+              ></button>
+            `,
+          )
+          .join("");
+
+        dotsContainer.querySelectorAll("[data-goto]").forEach((el) => {
+          el.addEventListener("click", () =>
+            goToSlide(Number(el.dataset.goto)),
+          );
+        });
+      }
+
+      function updateTrackPosition() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+        renderDots();
+      }
+
+      function goToSlide(i) {
+        current = (i + mediaItems.length) % mediaItems.length;
+        updateTrackPosition();
+      }
+
+      function nextSlide() {
+        goToSlide(current + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(current - 1);
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", prevSlide);
+      document.getElementById("nextBtn").addEventListener("click", nextSlide);
+
+      // Swipe di carousel utama (mobile)
+      let touchStartX = 0;
+      const carouselWrap = track.parentElement;
+      carouselWrap.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+      carouselWrap.addEventListener("touchend", (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) dx > 0 ? prevSlide() : nextSlide();
+      });
+
+      // ====== LIGHTBOX ======
+      function renderLightbox() {
+        const item = mediaItems[lightboxIndex];
+
+        lightboxContent.innerHTML =
+          item.type === "image"
+            ? `<img src="${item.src}" alt="${item.alt}" class="max-h-[85vh] w-full rounded-xl object-contain" />`
+            : `<iframe
+           src="${item.src}"
+           title="${item.alt}"
+           class="h-[70vh] w-full rounded-xl"
+           frameborder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+           allowfullscreen>
+         </iframe>`;
+
+        lightboxDots.innerHTML = mediaItems
+          .map(
+            (_, i) => `
+        <button
+          data-goto="${i}"
+          aria-label="Ke slide ${i + 1}"
+          class="h-2 rounded-full transition ${
+            i === lightboxIndex ? "w-5 bg-cyan-400" : "w-2 bg-slate-500"
+          }"
+        ></button>
+      `,
+          )
+          .join("");
+
+        lightboxDots.querySelectorAll("[data-goto]").forEach((el) => {
+          el.addEventListener("click", () =>
+            goToLightboxSlide(Number(el.dataset.goto)),
+          );
+        });
+      }
+
+      function openLightbox(i) {
+        lightboxIndex = i;
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.classList.add("overflow-hidden");
+        renderLightbox();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        document.body.classList.remove("overflow-hidden");
+        lightboxContent.innerHTML = ""; // stop video saat ditutup
+      }
+
+      function goToLightboxSlide(i) {
+        lightboxIndex = (i + mediaItems.length) % mediaItems.length;
+        renderLightbox();
+      }
+
+      function lightboxNext() {
+        goToLightboxSlide(lightboxIndex + 1);
+      }
+
+      function lightboxPrev() {
+        goToLightboxSlide(lightboxIndex - 1);
+      }
+
+      document
+        .getElementById("lightboxNext")
+        .addEventListener("click", lightboxNext);
+      document
+        .getElementById("lightboxPrev")
+        .addEventListener("click", lightboxPrev);
+      document
+        .getElementById("lightboxClose")
+        .addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") lightboxNext();
+        if (e.key === "ArrowLeft") lightboxPrev();
+      });
+
+      // Swipe di lightbox (mobile)
+      let lbTouchStartX = 0;
+      lightbox.addEventListener("touchstart", (e) => {
+        lbTouchStartX = e.touches[0].clientX;
+      });
+      lightbox.addEventListener("touchend", (e) => {
+        const dx = e.changedTouches[0].clientX - lbTouchStartX;
+        if (Math.abs(dx) > 40) dx > 0 ? lightboxPrev() : lightboxNext();
+      });
+
+      renderTrack();
+    </script>
+  </body>
+</html>
