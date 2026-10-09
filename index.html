@@ -9,6 +9,17 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+      html {
+    scroll-behavior: smooth;
+    }
+
+     .nav-link.active,
+     .mobile-link.active {
+    color: rgb(34 211 238);
+    }
+    </style>
+
     <!-- JavaScript -->
     <script src="js/script.js" defer></script>
   </head>
@@ -23,34 +34,34 @@
 
             <!-- Logo -->
             <a href="#home" class="text-xl font-bold">
-                WEB PORTOFOLIO<span class="text-cyan-400"></span>
+                WEB PORTOFOLIO
             </a>
 
             <!-- Menu Desktop -->
             <div class="hidden items-center gap-8 md:flex">
-                <a href="#home" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    Home
-                </a>
+                <a href="#home" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              Home
+            </a>
 
-                <a href="#about" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    About
-                </a>
+            <a href="#about" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              About
+            </a>
 
-                <a href="#skills" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    Skills
-                </a>
+            <a href="#skills" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              Skills
+            </a>
 
-                <a href="#projects" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    Projects
-                </a>
+            <a href="#projects" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              Projects
+            </a>
 
-                <a href="#experience" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    Experience
-                </a>
+            <a href="#experience" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              Experience
+            </a>
 
-                <a href="#contact" class="text-sm text-slate-300 transition hover:text-cyan-400">
-                    Contact
-                </a>
+            <a href="#contact" class="nav-link text-sm text-slate-300 transition hover:text-cyan-400">
+              Contact
+            </a>
             </div>
 
             <!-- Tombol Hamburger -->
@@ -154,14 +165,37 @@
           </div>
         </div>
 
-        <!-- Hero Image -->
+        <!-- Hero Images -->
 <div class="flex justify-center md:justify-end">
-  <div class="group w-full max-w-md overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
-    <img
-      src="assets/img/Foto_Wisuda_Web_Portofolio.jpeg"
-      alt="Foto Ramadhan Linggar Karan"
-      class="h-[28rem] w-full object-cover object-[center_25%] transition duration-500 group-hover:scale-105"
-    />
+  <div class="grid w-full max-w-md grid-cols-2 gap-4">
+
+    <!-- Foto Besar -->
+    <div class="group col-span-2 h-72 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
+      <img
+        src="assets/img/Foto_utama_Web_Protofolio.jpg"
+        alt="Foto wisuda Ramadhan Linggar Karan"
+        class="h-full w-full object-cover object-[center_30%] transition duration-500 group-hover:scale-105"
+      />
+    </div>
+
+    <!-- Foto Kecil Kiri -->
+    <div class="group h-52 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
+      <img
+        src="assets/img/Foto_Wisuda_Web_Portofolio.jpeg"
+        alt="Foto Ramadhan Linggar Karan"
+        class="h-full w-full object-cover object-[center_20%] transition duration-500 group-hover:scale-105"
+      />
+    </div>
+
+    <!-- Foto Kecil Kanan -->
+    <div class="group h-52 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl">
+      <img
+        src="assets/img/Foto_Linggar_Laptop.jpeg"
+        alt="Foto Ramadhan Linggar Karan menggunakan laptop"
+        class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      />
+    </div>
+
   </div>
 </div>
 
@@ -622,10 +656,10 @@
                     <!-- Image -->
                     <div class="h-64 overflow-hidden bg-slate-800">
                     <img
-                      src="assets/img/CineFinder.png"
-                      alt="Resto Mari Mampir"
-                      class="h-full w-full object-contain transition duration-500 group-hover:scale-105"
-                    />
+                    src="assets/img/CineFinder.png"
+                    alt="CineFinder"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
                     </div>
 
                     <!-- Content -->
@@ -695,9 +729,10 @@
           </div>
 
           <div class="max-w-3xl">
-            <div
-              class="rounded-2xl border border-slate-800 bg-slate-900 p-6 transition hover:border-cyan-400"
-            >
+          <a
+            href="experience/ptb_mbkm_mobile.html"
+            class="group block rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400"
+          >
               <div
                 class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
               >
@@ -774,9 +809,10 @@
                 >
                   Room Database
                 </span>
+                Lihat Detail Experience →
+                  </div>
+                </a>
               </div>
-            </div>
-          </div>
         </div>
       </section>
     </section>
